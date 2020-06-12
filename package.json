@@ -1,23 +1,45 @@
 {
   "name": "react-smarttab",
-  "version": "1.0.0",
-  "description": "Awesome React Tab control plugin",
-  "author": "techlab",
+  "version": "v1.0.0",
+  "description": "The awesome react tab control plugin",
+  "author": {
+    "name": "Dipu Raj",
+    "email": "hello.techlab@gmail.com",
+    "url": "http://dipu.me"
+  },
+  "homepage": "http://techlaboratory.net/react-smarttab",
   "license": "MIT",
-  "repository": "techlab/react-smarttab",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techlab/react-smarttab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techlab/react-smarttab/issues"
+  },
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "Tabs",
+    "Steps",
+    "Bootstrap",
+    "Step",
+    "ui"
+  ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --css-modules false --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --css-modules false --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
+    "test:fix": "eslint --fix . --ext .js src",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
@@ -41,6 +63,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",

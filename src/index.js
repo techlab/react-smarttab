@@ -1,6 +1,9 @@
-import React from 'react'
-import styles from './styles.module.css'
+// Include the CSS
+import './scss/smart_tab_all.scss'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+// Export tab components
+export { default as Tabs } from './components/Tabs'
+export { default as TabNav } from './components/TabNav'
+export { default as TabNavItem } from './components/TabNavItem'
+export { default as TabContent } from './components/TabContent'
+export { default as TabPanel } from './components/TabPanel'

@@ -1,7 +1,31 @@
-import { ExampleComponent } from '.'
+import { Tabs, TabNav, TabNavItem, TabContent, TabPanel } from '.'
 
-describe('ExampleComponent', () => {
+describe('Tabs', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(Tabs).toBeTruthy()
+  })
+})
+
+describe('TabNav', () => {
+  it('is truthy', () => {
+    expect(TabNav).toBeTruthy()
+  })
+})
+
+describe('TabNavItem', () => {
+  it('is truthy', () => {
+    expect(TabNavItem).toBeTruthy()
+  })
+})
+
+describe('TabContent', () => {
+  it('is truthy', () => {
+    expect(TabContent).toBeTruthy()
+  })
+})
+
+describe('TabPanel', () => {
+  it('is truthy', () => {
+    expect(TabPanel).toBeTruthy()
   })
 })
