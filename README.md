@@ -63,7 +63,7 @@ import 'react-smarttab/dist/index.css'
 const App = () => {
 
   return (
-    <Tabs>
+    <Tabs selected='tab-1' theme='dark' orientation='vertical'>
       <TabNav>
         <TabNavItem tab="tab-1">Tab 1</TabNavItem>
         <TabNavItem tab="tab-2">Tab 2</TabNavItem>
@@ -91,40 +91,6 @@ const App = () => {
 
 export default App
 ```
-
-##### All options
-
-```jsx
-<Tabs
-  selected='tab-1'
-  theme='dark'
-  orientation='vertical'
-  >
-  <TabNav>
-    <TabNavItem tab="tab-1">Tab 1</TabNavItem>
-    <TabNavItem tab="tab-2">Tab 2</TabNavItem>
-    <TabNavItem tab="tab-3">Tab 3</TabNavItem>
-    <TabNavItem tab="tab-4">Tab 4</TabNavItem>
-  </TabNav>
-
-  <TabContent>
-    <TabPanel id="tab-1">
-      Tab 1 Content
-    </TabPanel>
-    <TabPanel id="tab-2">
-      Tab 2 Content
-    </TabPanel>
-    <TabPanel id="tab-3">
-      Tab 3 Content
-    </TabPanel>
-    <TabPanel id="tab-4">
-      Tab 4 Content
-    </TabPanel>
-  </TabContent>
-</Tabs>
-```
-
-
 
 License
 ----
