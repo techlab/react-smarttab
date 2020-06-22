@@ -2,11 +2,16 @@ $breakpoint-phone: 640px;
 
 .st {
     position: relative;
+    outline-style: none;
+
+    &:focus{
+      outline-style: none;
+    }
 
     *,
     *::before,
     *::after {
-      box-sizing: border-box; // 1
+      box-sizing: border-box;
     }
 
     & > .tab-content {

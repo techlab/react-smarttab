@@ -1,5 +1,5 @@
 # React Smart Tab
-#### The awesome react tab control plugin
+#### The awesome react tab component for ReactJS
 
 [![Build Status](https://travis-ci.org/techlab/react-smarttab.svg?branch=master)](https://travis-ci.org/techlab/react-smarttab)
 [![npm version](https://badge.fury.io/js/react-smarttab.svg)](https://badge.fury.io/js/react-smarttab)
@@ -7,7 +7,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Donate on Paypal](https://img.shields.io/badge/PayPal-dipuraj-blue.svg)](https://www.paypal.me/dipuraj)
 
-React Smart Tab is a flexible and heavily customizable **React Tab control plugin**.
+React Smart Tab is a React component library for easy implementation of tab interface.
 
 > If you think it is cool, you should also check it's sibling [jQuery Smart Tab](http://techlaboratory.net/jquery-smarttab)
 
@@ -18,13 +18,13 @@ React Smart Tab is a flexible and heavily customizable **React Tab control plugi
 
 Screenshots
 -----
-![jQuery Smart Tab default](http://techlaboratory.net/assets/media/jquery-smart-tab/smarttab-v3-default.png)   
+![jQuery Smart Tab pills](http://techlaboratory.net/assets/media/react-smart-tab/react-smarttab-v2-pills.png)   
 
-![jQuery Smart Tab dark](http://techlaboratory.net/assets/media/jquery-smart-tab/smarttab-v3-dark.png)   
+![jQuery Smart Tab dark vertical](http://techlaboratory.net/assets/media/react-smart-tab/react-smarttab-v2-dark-vertical.png)   
 
-![jQuery Smart Tab tabs](http://techlaboratory.net/assets/media/jquery-smart-tab/smarttab-v3-tabs.png)   
+![jQuery Smart Tab default](http://techlaboratory.net/assets/media/react-smart-tab/react-smarttab-v2-default.png)   
 
-![jQuery Smart Tab brick](http://techlaboratory.net/assets/media/jquery-smart-tab/smarttab-v3-brick.png)
+![jQuery Smart Tab brick](http://techlaboratory.net/assets/media/react-smart-tab/react-smarttab-v2-brick.png)
 
 
 Installation
@@ -50,6 +50,7 @@ Features
 + Customizable CSS
 + Supports all modern browsers
 + Easy to implement
++ Callback event support
 
 Usage
 -----
@@ -63,25 +64,78 @@ import 'react-smarttab/dist/index.css'
 const App = () => {
 
   return (
-    <Tabs selected='tab-1' theme='dark' orientation='vertical'>
+    <Tabs>
       <TabNav>
-        <TabNavItem tab="tab-1">Tab 1</TabNavItem>
-        <TabNavItem tab="tab-2">Tab 2</TabNavItem>
-        <TabNavItem tab="tab-3">Tab 3</TabNavItem>
-        <TabNavItem tab="tab-4">Tab 4</TabNavItem>
+        <TabNavItem>Tab 1</TabNavItem>
+        <TabNavItem>Tab 2</TabNavItem>
+        <TabNavItem>Tab 3</TabNavItem>
+        <TabNavItem>Tab 4</TabNavItem>
       </TabNav>
 
       <TabContent>
-        <TabPanel id="tab-1">
+        <TabPanel>
           Tab 1 Content
         </TabPanel>
-        <TabPanel id="tab-2">
+        <TabPanel>
           Tab 2 Content
         </TabPanel>
-        <TabPanel id="tab-3">
+        <TabPanel>
           Tab 3 Content
         </TabPanel>
-        <TabPanel id="tab-4">
+        <TabPanel>
+          Tab 4 Content
+        </TabPanel>
+      </TabContent>
+    </Tabs>  
+  )
+}
+
+export default App
+```
+
+Please see the [documentation](http://techlaboratory.net/react-smarttab#documentation) for more details on implementation and usage.  
+
+##### Optional parameters
+
+Please see the [parameter descriptions](http://techlaboratory.net/react-smarttab#parameter-description) for more details.
+
+```jsx
+import React from 'react'
+
+import { Tabs, TabNav, TabNavItem, TabContent, TabPanel } from 'react-smarttab'
+import 'react-smarttab/dist/index.css'
+
+const App = () => {
+
+  return (
+    <Tabs
+    tabName='tab1'
+    selected='0'
+    theme='dark'
+    orientation='horizontal
+    justified='true'
+    enableURLhash={true}
+    onLeaveTab={(currentIndex, nextIndex) => { console.log("leaveTab", currentIndex, nextIndex) }}
+    onShowTab={(e) => { console.log("showTab", e) }}
+    >
+      <TabNav>
+        <TabNavItem>Tab 1</TabNavItem>
+        <TabNavItem>Tab 2</TabNavItem>
+        <TabNavItem>Tab 3</TabNavItem>
+        <TabNavItem>Tab 4</TabNavItem>
+      </TabNav>
+
+      <TabContent>
+        <TabPanel>
+          Tab 1 Content
+        </TabPanel>
+        <TabPanel>
+          Tab 2 Content
+        </TabPanel>
+        <TabPanel>
+          Tab 3 Content
+        </TabPanel>
+        <TabPanel>
           Tab 4 Content
         </TabPanel>
       </TabContent>

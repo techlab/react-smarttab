@@ -1,21 +1,53 @@
-import React, { useContext } from 'react'
-import TabContext from '../hooks/TabContext'
+/*!
+ * React SmartTab v2.0.1
+ * The awesome react tab component for ReactJS
+ * http://www.techlaboratory.net/react-smarttab
+ *
+ * Created by Dipu Raj
+ * http://dipu.me
+ *
+ * @license Licensed under the terms of the MIT License
+ * https://github.com/techlab/react-smarttab/blob/master/LICENSE
+ */
+
+import React from 'react'
 
 export default function TabNavItem(props) {
-  const { tabState } = useContext(TabContext)
-  const isActive = tabState.selectedTab && tabState.selectedTab === props.tab
+  const {
+    isActive,
+    index,
+    tabIndex,
+    className,
+    disabled,
+    tabIdx,
+    ...attributes
+  } = props
+
+  const getClassName = () => {
+    return (
+      'nav-link ' +
+      (className || '') +
+      (isActive ? ' active ' : '') +
+      (disabled === true ? ' disabled ' : '')
+    )
+  }
+
+  const getNavIdx = () => {
+    return tabIdx + '-' + (index + 1)
+  }
 
   return (
     <li role='presentation'>
       <a
-        {...props}
-        href={'#' + props.tab}
-        tab={props.tab}
-        className={'nav-link ' + (isActive ? 'active' : '')}
+        {...attributes}
+        index={index}
+        id={getNavIdx()}
+        href={'#' + getNavIdx()}
+        className={getClassName()}
         role='tab'
         aria-selected={isActive ? 'true' : 'false'}
-        aria-disabled={props.disabled ? 'true' : 'false'}
-        aria-controls={props.tab}
+        aria-disabled={disabled ? 'true' : 'false'}
+        aria-controls={getNavIdx()}
       >
         {props.children}
       </a>

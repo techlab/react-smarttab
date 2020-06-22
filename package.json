@@ -1,7 +1,7 @@
 {
   "name": "react-smarttab",
-  "version": "v1.0.0",
-  "description": "The awesome react tab control plugin",
+  "version": "v2.0.1",
+  "description": "The awesome react tab component for ReactJS",
   "author": {
     "name": "Dipu Raj",
     "email": "hello.techlab@gmail.com",
@@ -24,6 +24,7 @@
     "Component",
     "Library",
     "Tabs",
+    "Tab",
     "Steps",
     "Bootstrap",
     "Step",
