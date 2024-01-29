@@ -35,14 +35,14 @@ export default function TabNavItem(props) {
   const getNavIdx = () => {
     return tabIdx + '-' + (index + 1)
   }
-
+// {'#' + getNavIdx()}
   return (
     <li role='presentation'>
       <a
         {...attributes}
         index={index}
         id={getNavIdx()}
-        href={'#' + getNavIdx()}
+        href="javascript return;"
         className={getClassName()}
         role='tab'
         aria-selected={isActive ? 'true' : 'false'}

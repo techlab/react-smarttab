@@ -69,14 +69,20 @@ const App = () => {
       orientation={tabSettings.vertical ? 'vertical' : 'horizontal'}
       justified={tabSettings.justified.toString()}
       enableURLhash={true}
+      backButtonSupport={true}
+      keyNavigation={true}
+      scrollOffset="20"
+      autoProgress={false}
+      autoProgressInterval={3500}
+      stopOnFocus={true}
       onLeaveTab={(e) => { console.log("leaveTab", e) }}
       onShowTab={(e) => { console.log("showTab", e) }}
       >
       <TabNav>
         <TabNavItem><strong>Tab 1</strong> This is tab description</TabNavItem>
-        <TabNavItem><strong>Tab 2</strong> This is tab description</TabNavItem>
+        <TabNavItem ><strong>Tab 2</strong> This is tab description</TabNavItem>
         <TabNavItem><strong>Tab 3</strong> This is tab description</TabNavItem>
-        <TabNavItem><strong>Tab 4</strong> This is tab description</TabNavItem>
+        <TabNavItem ><strong>Tab 4</strong> This is tab description</TabNavItem>
       </TabNav>
 
       <TabContent>
@@ -100,6 +106,7 @@ const App = () => {
       </TabContent>
     </Tabs>
 
+    <div className="spacer"></div>
     <br /><br />
     <p>
       <label>Theme:</label>
@@ -139,6 +146,9 @@ const App = () => {
       orientation={tabSettings2.vertical ? 'vertical' : 'horizontal'}
       justified={tabSettings2.justified.toString()}
       enableURLhash={true}
+      backButtonSupport={true}
+      keyNavigation={true}
+      scrollOffset="30"
       onLeaveTab={(currentIndex, nextIndex) => { console.log("leaveTab", currentIndex, nextIndex) }}
       onShowTab={(e) => { console.log("showTab", e) }}
       >
@@ -168,6 +178,11 @@ const App = () => {
         </TabPanel>
       </TabContent>
     </Tabs>
+
+    <div className="spacer"></div>
+    <div className="spacer"></div>
+    <div className="spacer"></div>
+
 
   </div>
 }
